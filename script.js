@@ -51,4 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`Complex issue for iPhone ${models[index]}: ${issue}`);
         // Here you would send the issue to the database
     }
+    
+    // Login handling
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple authentication check
+            if (username === 'admin' && password === 'admin123') {
+                window.location.href = 'admin.html';
+            } else if (username === 'user' && password === 'user123') {
+                window.location.href = 'user.html';
+            } else {
+                alert('Invalid credentials');
+            }
+        });
+    }
 });
